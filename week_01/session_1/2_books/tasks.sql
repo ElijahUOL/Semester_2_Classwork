@@ -10,4 +10,4 @@
 
 -- write your sql code here
 
-SELECT * from books;
+SELECT * from books ORDER BY pages DESC LIMIT 10;
