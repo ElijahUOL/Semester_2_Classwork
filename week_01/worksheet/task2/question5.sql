@@ -1,3 +1,4 @@
 -- For each student, calculate the total number of credits from courses they passed. Assume a passing grade is 40 or higher.
 -- Expected Columns:
 -- StudentId, FirstName, LastName, TotalCreditsPassed
+SELECT Student.StudentId, Student.FirstName, Student.LastName, SUM(Course.Credits) AS TotalCreditsPassed FROM Student, Enrolment, Course WHERE Student.StudentId = Enrolment.StudentId AND Enrolment.CourseId = Course.CourseId AND Grade >= 40 GROUP BY Student.StudentId
