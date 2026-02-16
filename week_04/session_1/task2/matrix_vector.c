@@ -16,5 +16,9 @@
     Store your answer in vector c
     Print your final answer
     */
+   for (int i=0; i < 2; ++i){
+      for (int j=0; j < 1; ++j){
+      }
+   }
     return 0;
  }
