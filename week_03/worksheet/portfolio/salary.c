@@ -10,9 +10,9 @@
  int main( void ) {
 
     // define and initialise variables for the problem data 
-   float salary = 36250;
-   float national_insurrance = 8;
-   float tax_rate = 15;
+   float salary = 30000;
+   float national_insurrance = 9;
+   float tax_rate = 25;
    // calculate multipliers based on the NI/tax rates
    float national_insurrance_multiplier = national_insurrance / 100;
    float tax_rate_multiplier = tax_rate / 100;
