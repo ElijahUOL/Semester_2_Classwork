@@ -36,13 +36,13 @@ int main(void) {
         
         // TODO: Implement the guessing loop
         // This should continue until the correct number is guessed
-        do {
+        while (guess != target) {
             printf("Enter your guess: ");
             
             // TODO: Read and process the input
             // Use fgets() to read input
             // Use atoi() to convert to integer
-            scanf(input, 10, stdin);
+            fgets(input, 10, stdin);
             guess = atoi(input);
             num_guesses++;
             
@@ -58,8 +58,11 @@ int main(void) {
                 printf("Your guess was too high!");
             }
             // TODO: Offer a hint after several failed attempts
-            
-        } while (guess != target);
+            if (num_guesses > 5) {
+                int difference = abs(target - guess);
+                printf ("You are within %d of your target", difference);
+            }
+        }
         // TODO: Ask if the person wants to play again
         // Update the 'playing' flag based on the answer
         char choice;
@@ -68,7 +71,6 @@ int main(void) {
         if (choice == 'N' || choice == 'n') {
             playing = 0;
         }
-
     }
     printf("\nThanks for playing!\n");
     return 0;
