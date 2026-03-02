@@ -49,16 +49,16 @@ int main(void) {
             // TODO: Check if the guess is correct, too high, or too low
             // Provide appropriate in-game feedback
             if (guess == target) {
-                printf("Your guess was correct! It took you %d guesses!", num_guesses);
+                printf("Your guess was correct! It took you %d guesses!\n", num_guesses);
             }
             else if (guess < target) {
-                printf("Your guess was too low!");
+                printf("Your guess was too low!\n");
             }
             else if (guess > target) {
-                printf("Your guess was too high!");
+                printf("Your guess was too high!\n");
             }
             // TODO: Offer a hint after several failed attempts
-            if (num_guesses > 5) {
+            if (num_guesses > 5 || guess != target) {
                 int difference = abs(target - guess);
                 printf ("You are within %d of your target", difference);
             }
