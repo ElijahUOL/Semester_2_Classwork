@@ -1,23 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
   int speed_limit, driver_speed, fine = 0;
   char input[20];
 
   // Get user input for speed limit
   printf("Enter the speed limit: ");
-  if (fgets(input, sizeof(input), stdin)) {
+  if (fgets(input, sizeof(input), stdin))
+  {
     sscanf(input, "%d", &speed_limit);
   }
 
   // Get user input for driver's speed
   printf("Enter the driver's speed: ");
-  if (fgets(input, sizeof(input), stdin)) {
+  if (fgets(input, sizeof(input), stdin))
+  {
     sscanf(input, "%d", &driver_speed);
   }
 
-  // Determine if the driver is speeding
+  CheckIfSpeeding(driver_speed, speed_limit, fine);
+  
+  return 0;
+}
+
+void CheckIfSpeeding(int driver_speed, int speed_limit, int fine)
+{
+    // Determine if the driver is speeding
   if (driver_speed > speed_limit) {
     int excess_speed = driver_speed - speed_limit;
 
@@ -34,6 +43,4 @@ int main() {
   } else {
     printf("No fine needed.\n");
   }
-
-  return 0;
 }

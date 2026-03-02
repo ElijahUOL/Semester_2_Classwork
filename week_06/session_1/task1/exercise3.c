@@ -44,6 +44,7 @@ float average_all(int count, int *numbers) {
   return (float)total / count;
 }
 
+
 int main(int argc, char **argv) {
   if (argc < 2) {
     printf("Usage: ./averages num1 ... numx\n");
@@ -56,6 +57,12 @@ int main(int argc, char **argv) {
   int choice = 0;
   int total = 0;
   float mean;
+  int max;
+  int min;
+  int range;
+  int repeated_numbers;
+  int mode;
+  float median;
 
   numbers = calloc(count, sizeof(int));
 
@@ -72,7 +79,14 @@ int main(int argc, char **argv) {
     printf("1 - Show all values\n");
     printf("2 - Calculate sum\n");
     printf("3 - Calculate mean\n");
-    printf("4 - exit\n");
+    printf("4 - Find max\n");
+    printf("5 - Find min\n");
+    printf("6 - Calculate range\n");
+    printf("7 - Find repeated numbers\n");
+    printf("8 - Find mode\n");
+    printf("9 - Sort from smallest to largest\n");
+    printf("10 - Find median\n");
+    printf("0 - exit\n");
 
     printf("Enter choice: ");
     fgets(buffer, sizeof(buffer), stdin);
@@ -96,6 +110,34 @@ int main(int argc, char **argv) {
       printf("Average is: %.2f\n", mean);
       break;
     case 4:
+      max = find_max(count, numbers);
+      printf("Max is: %.2f\n", max);
+      break;
+    case 5:
+      min = find_min(count, numbers);
+      printf("Min is: %.2f\n", min);
+      break;
+    case 6:
+      range = find_range(count, numbers);
+      printf("Range is: %.2f\n", range);
+      break;
+    case 7:
+      repeated_numbers = find_repeated_numbers(count, numbers);
+      printf("Max is: %.2f\n", max);
+      break;
+    case 8:
+      max = find_max(count, numbers);
+      printf("Max is: %.2f\n", max);
+      break;
+    case 9:
+      max = find_max(count, numbers);
+      printf("Max is: %.2f\n", max);
+      break;
+    case 10:
+      max = find_max(count, numbers);
+      printf("Max is: %.2f\n", max);
+      break;
+    case 0:
       printf("Exiting...\n");
       break;
     default:

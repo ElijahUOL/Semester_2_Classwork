@@ -12,7 +12,6 @@ int factorial(int n) {
   if (n == 0) {
     return 1;
   }
-
   return n * factorial(n - 1);
 }
 
@@ -31,7 +30,7 @@ int main(int argc, char **argv) {
 
   nCr should return the total combinations of r items out of n.
   This is calculated by: n! / (r! (n - r)!)
-
+  
   nPr should return the total permutations of r items out of n.
   This is calculated by: n! / (n-r)!
 
@@ -40,4 +39,23 @@ int main(int argc, char **argv) {
   You should try and use functions to write your program.
 
   */
+ 
+ int n = atoi(argv[1]);
+ int r = atoi(argv[3]);
+ char *type = argv[2];
+ float result;
+ if (n < 0 || r < 0 || n < r)
+ {
+  printf("Invalid arguments passed\n");
+  return 0;
+ }
+ if (*type == 'C')
+ {
+    result = (factorial(n)) / (factorial(r) * factorial(n-r));
+ }
+ else if (*type == 'P')
+ {
+    result = (factorial(n)) / (factorial(n-r));
+ }
+ printf("%d %s %d = %.2f\n", n, type, r, result);
 }
