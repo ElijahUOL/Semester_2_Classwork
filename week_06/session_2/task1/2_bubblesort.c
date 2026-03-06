@@ -1,6 +1,6 @@
 #include <stdio.h>
+#include "2_bubblesort.h"
 
-void bubbleSort(int array[], int n);
 
 int main(void) {
   int arr[] = {64, 34, 25, 12, 22, 11, 90};
@@ -23,12 +23,3 @@ int main(void) {
   return 0;
 }
 
-/**
- * @brief Sorts an array of integers in ascending order using the bubble sort algorithm.
- * 
- * @param arr The array of integers to be sorted.
- * @param n The number of elements in the array.
- */
-void bubbleSort(int array[], int n) {
-  // code goes here
-}
