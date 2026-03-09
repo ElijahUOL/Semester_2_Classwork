@@ -6,6 +6,7 @@ int main(void)
 {
     int i, j;
 
+
     j = i + 3;
 
     printf("%d\n", j);
