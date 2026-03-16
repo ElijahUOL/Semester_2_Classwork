@@ -10,6 +10,7 @@ struct student_record {
     int id;                  // Student's ID number
     float marks[NUM_MODULES]; // Marks for three modules
 };
+typedef struct student_record Student;
 
 /*
  * function headers
