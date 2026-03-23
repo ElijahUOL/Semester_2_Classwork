@@ -11,6 +11,10 @@ int main( void ) {
 
     // push() - add some data to the stack
     push(stack,createData(1));
+    push(stack,createData(2));
+    push(stack,createData(3));
+    displayStack (stack);
+    pop(stack);
     displayStack (stack);
 
     // free stack dynamic memory

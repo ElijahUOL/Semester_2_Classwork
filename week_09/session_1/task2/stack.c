@@ -38,9 +38,8 @@ Node *pop( Stack *stack ) {
         return NULL;
 
     Node *node = stack->top;
-    
     stack->top = node->next;         // move stack top
     stack->size--;                   // decrease stack size
-
+    freeNode(node);
     return node;
 }

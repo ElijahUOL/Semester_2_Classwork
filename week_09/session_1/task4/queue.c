@@ -42,16 +42,16 @@ void join( Queue *queue, int val ) {
  * remove a node at the front
  */
 Node *leave( Queue *queue ) {
-    
+   
     if( queue->size==0 )               // check if queue is already empty
         return NULL;
-
+     Node *temp = queue->front;
     Node *node = queue->front;
     queue->front = node->next;         // move queue front
     queue->size--;                     // decrease queue size
 
     if( queue->size==0 )               // check if queue is now empty
         queue->back = NULL;
-
+    freeNode(temp);
     return node;
 }
