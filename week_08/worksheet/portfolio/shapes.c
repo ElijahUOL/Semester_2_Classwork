@@ -53,14 +53,13 @@ float triangleArea( Triangle t )
 
 bool samePoint( Point p1, Point p2 )
 {
-    if ((abs(p1.x-p2.x)<1.0e-6)&&(abs(p1.y-p2.y)<1.0e-6))
+    if ((fabs(p1.x-p2.x)<1.0e-6)&&(fabs(p1.y-p2.y)<1.0e-6))
     {
         return true;
     }
-    else
-    {
-        return false;
-    }}
+    return false;
+}
+
 
 bool pointInLine( Point p, Line l)
 {
@@ -68,10 +67,7 @@ bool pointInLine( Point p, Line l)
     {
         return true;
     }
-    else
-    {
-        return false;
-    }
+    return false;
 }
 
 bool pointInTriangle( Point p, Triangle t )
