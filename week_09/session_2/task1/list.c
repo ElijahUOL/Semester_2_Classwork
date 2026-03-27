@@ -53,6 +53,7 @@ Node *removeNode( List *list, Node *loc ) {
         removed = loc->next;
         loc->next = removed->next;
     }
+    freeNode(removed);
     list->size--;                   // decrease List size
 
     return removed;
